@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Variable Declaration
-    float horizontalInput;  //for the horizontal input
-    float xRange = 20f;    //for the range to bound the player to the screen so that it should not fall down 
+    public float horizontalInput;  //for the horizontal input
+    float xRange = 14f;    //for the range to bound the player to the screen so that it should not fall down 
     float speed = 20f;    // speed for the movement of the player
 
+    public GameObject projectilePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         
     }
     // LateUpdate is called after the update function
+
     private void LateUpdate()
     {
         //if() statement for keeping the player in the negative x axis 
@@ -37,6 +39,12 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z); //keeping the position same as the range of the screen 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Space))
+        {
+            // Launch a projectile from the player
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }
 }
