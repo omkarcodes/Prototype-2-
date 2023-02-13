@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Variable Declaration
     public float horizontalInput;  //for the horizontal input
-    float xRange = 14f;    //for the range to bound the player to the screen so that it should not fall down 
+    float xRange = 13f;    //for the range to bound the player to the screen so that it should not fall down 
     float speed = 20f;    // speed for the movement of the player
 
     public GameObject projectilePrefab;
