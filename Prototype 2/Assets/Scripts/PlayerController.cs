@@ -14,17 +14,17 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         horizontalInput = Input.GetAxis("Horizontal");  //Get the axis for a boolean value
 
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime); //code for movement of the player in x axis
-        
+
     }
     // LateUpdate is called after the update function
 
