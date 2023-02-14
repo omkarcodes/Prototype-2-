@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
+    public GameObject doberMan;
+    public GameObject bullDog;
+    public GameObject germanShephard;
+    public GameObject FoodSteak;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +23,8 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        Destroy(FoodSteak);
         Destroy(other.gameObject);
     }
+    
 }

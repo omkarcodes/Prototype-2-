@@ -6,6 +6,8 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     float lowerBound = -10f;
     float topBound = 30f;
+    float bound = 13f;
+    float rightBound = -13f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,17 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
         else if (transform.position.z < lowerBound)
         {
-            print("Game Over");
+            print("Game Over1");
+            Destroy(gameObject);
+        }
+        else if(transform.position.x > bound)
+        {
+            print("gameOver2");
+            Destroy(gameObject);
+        }
+        else if (transform.position.x < rightBound)
+        {
+            print("gameover3");
             Destroy(gameObject);
         }
     }
