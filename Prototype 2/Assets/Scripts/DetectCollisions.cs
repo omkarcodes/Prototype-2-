@@ -23,7 +23,7 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(FoodSteak);
+        Destroy(gameObject);
         Destroy(other.gameObject);
     }
     

@@ -8,11 +8,12 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] animalPrefabs;
     
     float spawnRangeX = 10f;
-    float spawnPosX = -14f;
+    float spawnPosX = 12f;
     float spawnPosZ = 20f;
+    
 
-    float delayStart = 2f;
-    float spawnInterval = 1.5f;
+    float delayStart = 1f;
+    float spawnInterval = 2.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class SpawnManager : MonoBehaviour
     {
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Quaternion Rotation = new Quaternion(0,90,0,90);
-        Vector3 spawnPosZZ = new Vector3(12f, 0, Random.Range(1.4f, 12f));
+        Vector3 spawnPosZZ = new Vector3(-spawnPosX, 0, Random.Range(1.4f, 12f));
 
         Instantiate(animalPrefabs[animalIndex], spawnPosZZ, Rotation);
 
@@ -50,7 +51,7 @@ public class SpawnManager : MonoBehaviour
     {
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Quaternion Rotation = new Quaternion(0, -90, 0, 90);
-        Vector3 spawnPosNZZ = new Vector3(12f, 0, Random.Range(1.4f, 12f));
+        Vector3 spawnPosNZZ = new Vector3(spawnPosX, 0, Random.Range(1.4f, 12f));
 
         Instantiate(animalPrefabs[animalIndex], spawnPosNZZ, Rotation);
     }
